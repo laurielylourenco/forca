@@ -2,6 +2,8 @@
 
 Jogo da Forca desenvolvido com **React** + **TypeScript**.  
 Atualmente é uma versão single-player, mas em breve será transformado em um jogo multiplayer em tempo real com **WebSocket**!
+
+
 Ideia mostrar o que aprendi sobre esse protocolo nos ultimos anos então primeiro foi desenvolvido o frontend 
 A ideia é mostrar o que aprendi sobre esse protocolo nos últimos anos. Para isso, comecei desenvolvendo/buscando sobre esse tipo front-end do jogo.
 
@@ -16,7 +18,7 @@ A ideia é mostrar o que aprendi sobre esse protocolo nos últimos anos. Para is
 
 1. Clone o repositório:
    ```bash
-   git clone https://github.com/seu-usuario/forca.git
+   git clone https://github.com/laurielylourenco/forca.git
    cd forca
    ```
 
