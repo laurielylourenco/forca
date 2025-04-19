@@ -4,6 +4,7 @@ import words from './wordListPT.json'
 import { HangmanDrawing } from './HangmanDrawing';
 import { HangmanWord } from './HangmanWord';
 import { Keyboard } from './Keyboard';
+import { GameFinal } from './GameFinal';
 
 function App() {
 	const [wordToGuess] = useState(() => {
@@ -18,8 +19,8 @@ function App() {
 
 	const isLoser = inCorrectLetters.length >= 6 // numero de partes do corpos
 	const isWinner = wordToGuess
-						.split("")
-						.every(letter => guessedLetters.includes(letter))
+		.split("")
+		.every(letter => guessedLetters.includes(letter))
 
 
 
@@ -54,6 +55,10 @@ function App() {
 
 	}, [guessedLetters]);
 
+	function restartGame() {
+		window.location.reload()
+	}
+
 
 	return <div style={{
 		maxWidth: "800px",
@@ -63,16 +68,17 @@ function App() {
 		margin: "0 auto",
 		alignItems: "center"
 	}}>
-		<div style={{ fontSize: "2rem", textAlign: "center" }}>
-		{isWinner && "Parabéns, você venceu! 🎉 Clique em atualizar para jogar novamente."}
-        {isLoser && "Boa tentativa! Atualize para mais uma chance."}
-		</div>
+		<GameFinal
+			isGameOver={isWinner || isLoser}
+			hasWon={isWinner}
+			onRestart={restartGame}
+		/>
 
 		<HangmanDrawing numberOfGuesses={inCorrectLetters.length} />
 		<HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} />
 
 
-		<div style={{ alignSelf: "stretch" , maxHeight: "350px"}}>
+		<div style={{ alignSelf: "stretch", maxHeight: "350px" }}>
 			<Keyboard
 				disabled={isWinner || isLoser}
 				activeLetters={guessedLetters.filter(letter => wordToGuess.includes(letter))}
