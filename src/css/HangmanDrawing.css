@@ -1,0 +1,128 @@
+.hangman-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .hangman-drawing {
+    position: relative;
+    height: 300px;
+    width: 250px;
+  }
+  
+  /* Estrutura da forca */
+  .hangman-base {
+    height: 10px;
+    width: 250px;
+    background: black;
+    position: absolute;
+    bottom: -21px;
+  }
+  
+  .hangman-post {
+    height: 310px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    bottom: -12px;
+    left: 120px;
+  }
+  
+  .hangman-beam {
+    height: 10px;
+    width: 130px;
+    background: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  .hangman-rope {
+    height: 50px;
+    width: 10px;
+    background: black;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  
+  /* Partes do corpo */
+  .hangman-part.head {
+    width: 50px;
+    height: 50px;
+    border-radius: 100%;
+    border: 10px solid black;
+    position: absolute;
+    top: 50px;
+    right: -30px;
+  }
+  
+  .hangman-part.body {
+    width: 10px;
+    height: 100px;
+    background: black;
+    position: absolute;
+    top: 120px;
+    right: 0;
+  }
+  
+  .hangman-part.right-arm {
+    width: 100px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 150px;
+    right: -100px;
+    transform: rotate(-30deg);
+    transform-origin: left bottom;
+  }
+  
+  .hangman-part.left-arm {
+    width: 100px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 150px;
+    right: 10px;
+    transform: rotate(30deg);
+    transform-origin: right bottom;
+  }
+  
+  .hangman-part.right-leg {
+    width: 100px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 210px;
+    right: -90px;
+    transform: rotate(60deg);
+    transform-origin: left bottom;
+  }
+  
+  .hangman-part.left-leg {
+    width: 100px;
+    height: 10px;
+    background: black;
+    position: absolute;
+    top: 210px;
+    right: 0;
+    transform: rotate(-60deg);
+    transform-origin: right bottom;
+  }
+  
+  /* Media queries para responsividade */
+  @media (max-width: 768px) {
+    .hangman-drawing {
+      transform: scale(0.8);
+      transform-origin: center top;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hangman-drawing {
+      transform: scale(0.6);
+      transform-origin: center top;
+    }
+  }
+  
