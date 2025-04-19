@@ -72,7 +72,7 @@ function App() {
 		<HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} />
 
 
-		<div style={{ alignSelf: "stretch" }}>
+		<div style={{ alignSelf: "stretch" , maxHeight: "350px"}}>
 			<Keyboard
 				disabled={isWinner || isLoser}
 				activeLetters={guessedLetters.filter(letter => wordToGuess.includes(letter))}
